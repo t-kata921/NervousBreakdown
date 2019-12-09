@@ -1,8 +1,5 @@
 # NervousBreakdown
 
-## Apology
-This Game is now <span style="color:#f00">under translation</span> from Japanese into English.
-
 ## What is this?
 A Nervous Breakdown Game which I made in informatics class as an assignment.
 

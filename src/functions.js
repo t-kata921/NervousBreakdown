@@ -1,23 +1,23 @@
-// 関数たちOnlyなファイル
+// Functions Only
 
 /**
- * @description 一時停止する。async&awaitを使用すること
- * @param {Number} ms 一時停止する秒数
+ * @description Parse. Use async&await
+ * @param {Number} ms Time to Parse
  * @returns {Promise}
  */
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
 
 /**
- * @description 入力されたセレクタを持つ要素を返す
- * @param {String} e セレクタ
+ * @description Return the Element which has the input selector
+ * @param {String} e Selector
  * @returns {HTMLElement}
  */
 const $ = e=>document.querySelector(e);
 
 /**
- * @description フェードアニメーションをやる。
- * @param {HTMLElement} b フェード前に表示されている要素
- * @param {HTMLElement} a フェード後に表示される要素
+ * @description Fade Animation
+ * @param {HTMLElement} b Element shown before the animation
+ * @param {HTMLElement} a Element shown after the animation
  * @returns {null}
  */
 const fade = async (b,a)=>{
@@ -31,10 +31,10 @@ const fade = async (b,a)=>{
 }
 
 /**
- * @description 渡された数をdegit桁以上の文字列に変換
- * @param {Number} n 変換したい数
- * @param {Number} degit 桁
- * @returns {String} degit桁
+ * @description Converts int to str (length >= `digits`)
+ * @param {Number} n Number to convert
+ * @param {Number} degit Digit
+ * @returns {String} Converted String
  */
 const num2str = (n, degit=2)=>{
     const str = String(n);
@@ -45,9 +45,9 @@ const num2str = (n, degit=2)=>{
 };
 
 /**
- * @description 与えられたmaxとminの間のランダムな値を取得
- * @param {Number} max 最大値
- * @param {Number} min 最小値（デフォルト：0）
+ * @description Get Random Value between `max` and `min`
+ * @param {Number} max
+ * @param {Number} min Default:0
  */
 const rand = (max, min=0)=>Math.floor(Math.random() * (max-min)) + min;
 

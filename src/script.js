@@ -34,10 +34,10 @@ const check = async function(){
         if(this.classList.contains("clicked")) return false;
         isAnimating = true;
         this.classList.add("clicked");
-        if(isTwice){  // もし2枚目
+        if(isTwice){  // another
             isTwice = false;
             await sleep(1000);
-            if(prevCard === this.innerHTML){  // カード同じ
+            if(prevCard === this.innerHTML){  // Same card
                 document.querySelectorAll('.card.clicked').forEach(_=>{
                     _.classList.add('aligned');
                     _.removeEventListener("click",check);
@@ -55,7 +55,7 @@ const check = async function(){
     }
 }
 
-// メイン
+// Main
 window.addEventListener('load',()=>{
     $("#start").addEventListener('click', async ()=>{
         $('span#remaining').innerText = cardRemaining;
@@ -73,7 +73,7 @@ window.addEventListener('load',()=>{
         let min = 0;
         let sec = 0;
         let milSec = 0;
-        $('span#time').innerText = `まずは10秒で覚えましょう`;
+        $('span#time').innerText = `Memorize these cards within 10 secs.`;
         await sleep(7000);
         $('span#time').innerText = `3`;
         await sleep(1000);
