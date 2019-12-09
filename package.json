@@ -1,0 +1,21 @@
+{
+  "name": "NervousBreakdown",
+  "version": "1.0.0",
+  "author": "Asa",
+  "license": "MIT",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+  },
+  "keywords": [],
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "uglify-js": "^3.6.0",
+    "webpack": "^4.35.3"
+  }
+}

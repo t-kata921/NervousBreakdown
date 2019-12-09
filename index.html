@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nervous Breakdown Game</title>
+    <!-- <script src="https://kit.fontawesome.com/7fba4a39db.js"></script> -->
+    <link rel="stylesheet" href="./fa/css/all.min.css">
+    <script src="./bundle.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container start showing">
+        <h1>Nervous Breakdown Game</h1>
+        <button id="start">Start</button>
+    </div>
+    <div class="container game">
+        <div class="buttonsContainer">
+            <p class="timer"><i class="far fa-clock"></i>&nbsp;<span id="time"></span></p>
+            <p class="remaining">残り<span id="remaining"></span>ペア</p>
+        </div>
+        <div class="boardContainer">
+
+        </div>
+    </div>
+    <div class="container end">
+        <h1>Finished!</h1>
+        <p>Time: <span id="finTime"></span></p>
+        <button id="again">Play Again</button>
+    </div>
+</body>
+</html>
