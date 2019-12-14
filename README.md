@@ -16,8 +16,10 @@ A Nervous Breakdown Game which I made in informatics class as an assignment.
 6. When all the cards turned red, finish!
 
 ## Release
+[![Release](https://img.shields.io/github/v/release/a01sa01to/NervousBreakdown?label=Latest%20release&maxAge=3600)](https://github.com/a01sa01to/NervousBreakdown/releases)
 
 > Version 1.0 Released on 2019.12.09
+
 
 ## Author
 [![Follow @a01sa01to](https://img.shields.io/twitter/follow/a01sa01to?label=Follow&style=social&maxAge=3600, "Follow")](https://twitter.com/intent/follow?screen_name=a01sa01to)<br>
