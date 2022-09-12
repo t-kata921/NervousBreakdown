@@ -35,6 +35,7 @@
 h1,h2,h3,h4,h5,h6,p{
     width: max-content;
     margin: 8px;
+    text-align: center;
 }
 button{
     font-size: 24px;
@@ -64,7 +65,7 @@ body{
         width: max-content;
         height: max-content;
         grid-area: i;
-        &.game{
+        &.game-phase{
             display: grid;
             width: 80vh;
             height: 100vh;
@@ -72,9 +73,6 @@ body{
             grid-template-rows: 20vh 80vh;
             .buttonsContainer{
                 grid-area: btn;
-                p{
-                    font-size: 5vh;
-                }
             }
             .boardContainer{
                 grid-area: board;

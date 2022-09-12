@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+Rounded+1c|Noto+Sans+JP|Poppins&display=swap");
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -15,16 +7,6 @@
     opacity: 1;
   }
 }
-
-@-webkit-keyframes fadeout {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes fadeout {
   0% {
     opacity: 1;
@@ -33,64 +15,30 @@
     opacity: 0;
   }
 }
-
-@-webkit-keyframes hideCard {
-  0% {
-    background: #fff;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-  100% {
-    background: #000;
-    -webkit-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
-  }
-}
-
 @keyframes hideCard {
   0% {
     background: #fff;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   100% {
     background: #000;
-    -webkit-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
 }
-
-@-webkit-keyframes showCard {
-  0% {
-    background: #000;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-  100% {
-    background: #fff;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-}
-
 @keyframes showCard {
   0% {
     background: #000;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
   100% {
     background: #fff;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
 }
-
 h1, h2, h3, h4, h5, h6, p {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin: 8px;
+  text-align: center;
 }
 
 button {
@@ -104,134 +52,83 @@ html {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Poppins, 'Kosugi Maru', 'M PLUS Rounded 1c', "Noto Sans Japanese", sans-serif;
+  font-family: Poppins, "Kosugi Maru", "M PLUS Rounded 1c", "Noto Sans Japanese", sans-serif;
   width: 100vw;
   height: 100vh;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -ms-grid;
+  box-sizing: border-box;
   display: grid;
-      grid-template-areas: ". . ." ". i ." ". . .";
-  -ms-grid-columns: .5fr max-content .5fr;
-      grid-template-columns: .5fr -webkit-max-content .5fr;
-      grid-template-columns: .5fr max-content .5fr;
-  -ms-grid-rows: .5fr max-content .5fr;
-      grid-template-rows: .5fr -webkit-max-content .5fr;
-      grid-template-rows: .5fr max-content .5fr;
+  grid-template-areas: ". . ." ". i ." ". . .";
+  grid-template-columns: 0.5fr max-content 0.5fr;
+  grid-template-rows: 0.5fr max-content 0.5fr;
 }
-
 body .container {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
   grid-area: i;
 }
-
-body .container.game {
-  display: -ms-grid;
+body .container.game-phase {
   display: grid;
   width: 80vh;
   height: 100vh;
-      grid-template-areas: "btn" "board";
-  -ms-grid-rows: 20vh 80vh;
-      grid-template-rows: 20vh 80vh;
+  grid-template-areas: "btn" "board";
+  grid-template-rows: 20vh 80vh;
 }
-
-body .container.game .buttonsContainer {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
+body .container.game-phase .buttonsContainer {
   grid-area: btn;
 }
-
-body .container.game .buttonsContainer p {
-  font-size: 5vh;
-}
-
-body .container.game .boardContainer {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
+body .container.game-phase .boardContainer {
   grid-area: board;
-  display: -ms-grid;
   display: grid;
   --cardSize: calc((80vh - 60px) / 6);
   gap: 10px;
-      grid-template-areas: "a b c d e f" "g h i j k l" "m n o p q r" "s t u v w x" "y z A B C D" "E F G H I J";
-  -ms-grid-columns: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
-      grid-template-columns: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
-  -ms-grid-rows: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
-      grid-template-rows: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
+  grid-template-areas: "a b c d e f" "g h i j k l" "m n o p q r" "s t u v w x" "y z A B C D" "E F G H I J";
+  grid-template-columns: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
+  grid-template-rows: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
 }
-
-body .container.game .boardContainer .card {
+body .container.game-phase .boardContainer .card {
   width: var(--cardSize);
   height: var(--cardSize);
   border: 1px #aaa solid;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
   background: #000;
   color: #000;
   font-size: calc(var(--cardSize) - 40px);
-  display: -ms-grid;
   display: grid;
-      grid-template-areas: ". . ." ". icon ." ". . .";
-  -ms-grid-columns: .5fr max-content .5fr;
-      grid-template-columns: .5fr -webkit-max-content .5fr;
-      grid-template-columns: .5fr max-content .5fr;
-  -ms-grid-rows: .5fr max-content .5fr;
-      grid-template-rows: .5fr -webkit-max-content .5fr;
-      grid-template-rows: .5fr max-content .5fr;
-  -webkit-animation: hideCard 500ms;
-          animation: hideCard 500ms;
+  grid-template-areas: ". . ." ". icon ." ". . .";
+  grid-template-columns: 0.5fr max-content 0.5fr;
+  grid-template-rows: 0.5fr max-content 0.5fr;
+  animation: hideCard 500ms;
 }
-
-body .container.game .boardContainer .card i {
+body .container.game-phase .boardContainer .card i {
   display: block;
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
   grid-area: icon;
 }
-
-body .container.game .boardContainer .card.clicked {
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
-  -webkit-animation: showCard 500ms;
-          animation: showCard 500ms;
+body .container.game-phase .boardContainer .card.clicked {
+  transform: rotateY(0deg);
+  animation: showCard 500ms;
   background: #fff;
 }
-
-body .container.game .boardContainer .card.aligned {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+body .container.game-phase .boardContainer .card.aligned {
+  animation-play-state: paused;
   background: #fff;
   color: #f00;
 }
-
 body .container.end {
   font-size: 20px;
 }
-
 body .container.fadein {
-  -webkit-animation: fadein 700ms;
-          animation: fadein 700ms;
+  animation: fadein 700ms;
 }
-
 body .container.fadeout {
-  -webkit-animation: fadeout 700ms;
-          animation: fadeout 700ms;
+  animation: fadeout 700ms;
 }
-
 body .container:not(.showing) {
   display: none;
 }
+
 /*# sourceMappingURL=style.css.map */
