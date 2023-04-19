@@ -164,6 +164,6 @@ window.addEventListener('load', () => {
     document.getElementById("title-plan").innerText = planTimeText;
     document.getElementById("title-plan-phase").innerText = planTimeText;
   }
-  document.getElementById("next-url-message").innerText = location.href + "?plantime=60";
+  document.getElementById("next-url").innerText = location.href + "?plantime=60";
 
 });
