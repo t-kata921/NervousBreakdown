@@ -35,7 +35,13 @@
     transform: rotateY(0deg);
   }
 }
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   width: max-content;
   margin: 8px;
   text-align: center;
@@ -84,9 +90,9 @@ body .container.game-phase .buttonsContainer {
 body .container.game-phase .boardContainer {
   grid-area: board;
   display: grid;
-  --cardSize: calc((80vh - 60px) / 6);
+  --cardSize: calc((80vh - 60px) / 8);
   gap: 10px;
-  grid-template-areas: "a b c d e f" "g h i j k l" "m n o p q r" "s t u v w x" "y z A B C D" "E F G H I J";
+  grid-template-areas: "a b c d e f g h" "i j k l m n o p" "q r s t u v w x" "y z A B C D E F" "G H I J K L M N" "O P Q R S T U V" "W X Y Z AA BB CC DD" "EE FF GG HH II JJ KK LL";
   grid-template-columns: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
   grid-template-rows: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
 }

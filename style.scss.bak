@@ -1,0 +1,129 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+Rounded+1c|Noto+Sans+JP|Poppins&display=swap');
+
+// Animations
+@keyframes fadein{
+    0%{ opacity: 0 }
+    100%{ opacity: 1 }
+}
+@keyframes fadeout{
+    0%{ opacity: 1 }
+    100%{ opacity: 0 }
+}
+@keyframes hideCard{
+    0%{
+        background: #fff;
+        transform: rotateY(0deg);
+    }
+    100%{
+        background: #000;
+        transform: rotateY(-180deg);
+    }
+}
+@keyframes showCard{
+    0%{
+        background: #000;
+        transform: rotateY(180deg);
+    }
+    100%{
+        background: #fff;
+        transform: rotateY(0deg);
+    }
+}
+
+// Styles Common
+h1,h2,h3,h4,h5,h6,p{
+    width: max-content;
+    margin: 8px;
+    text-align: center;
+}
+button{
+    font-size: 24px;
+    padding: 12px;
+    margin: auto;
+    display: block;
+}
+
+// Styles
+html{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Poppins, 'Kosugi Maru', 'M PLUS Rounded 1c', "Noto Sans Japanese", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: ". . ." ". i ." ". . .";
+    grid-template-columns: .5fr max-content .5fr;
+    grid-template-rows: .5fr max-content .5fr;
+    .container{
+        width: max-content;
+        height: max-content;
+        grid-area: i;
+        &.game-phase{
+            display: grid;
+            width: 80vh;
+            height: 100vh;
+            grid-template-areas: "btn" "board";
+            grid-template-rows: 20vh 80vh;
+            .buttonsContainer{
+                grid-area: btn;
+            }
+            .boardContainer{
+                grid-area: board;
+                display: grid;
+                --cardSize: calc((80vh - 60px) / 6);
+                gap: 10px;
+                grid-template-areas: "a b c d e f" "g h i j k l" "m n o p q r" "s t u v w x" "y z A B C D" "E F G H I J";
+                grid-template-columns: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
+                grid-template-rows: var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize) var(--cardSize);
+
+                .card{
+                    width: var(--cardSize);
+                    height: var(--cardSize);
+                    border: 1px #aaa solid;
+                    transform: rotateY(180deg);
+                    background: #000;
+                    color: #000;
+                    font-size: calc(var(--cardSize) - 40px);
+                    display: grid;
+                    grid-template-areas: ". . ." ". icon ." ". . .";
+                    grid-template-columns: .5fr max-content .5fr;
+                    grid-template-rows: .5fr max-content .5fr;
+                    animation: hideCard 500ms;
+                    i{
+                        display: block;
+                        grid-area: icon;
+                    }
+                    &.clicked{
+                        transform: rotateY(0deg);
+                        animation: showCard 500ms;
+                        background: #fff;
+                    }
+                    &.aligned{
+                        animation-play-state: paused;
+                        background: #fff;
+                        color: #f00;
+                    }
+                }
+            }
+        }
+        &.end{
+            font-size: 20px;
+        }
+        &.fadein{
+            animation: fadein 700ms;
+        }
+        &.fadeout{
+            animation: fadeout 700ms;
+        }
+        &:not(.showing){
+            display: none;
+        }
+    }
+}
