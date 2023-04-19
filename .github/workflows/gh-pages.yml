@@ -1,0 +1,27 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Set a branch name to trigger deployment
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - run: npm run build
+      - name: Upload html
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: ./
