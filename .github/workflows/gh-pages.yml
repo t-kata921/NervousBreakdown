@@ -18,7 +18,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+          cache: sass
 
+      - run: npm install -g sass
       - run: npm run build
       - name: Upload html
         uses: actions/upload-artifact@v2
