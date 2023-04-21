@@ -164,6 +164,7 @@ window.addEventListener('load', () => {
     document.getElementById("title-plan").innerText = planTimeText;
     document.getElementById("title-plan-phase").innerText = planTimeText;
   }
-  document.getElementById("next-url").innerText = location.href + "?plantime=60";
+  
+  document.getElementById("next-url").innerText = "https://t-kata921.github.io/NervousBreakdown/?plantime=60";
 
 });
