@@ -153,8 +153,8 @@ window.addEventListener('load', () => {
   });
   $('#again').addEventListener('click', () => {
     // location.reload();
-    let url = location.href + "?plantime=60";
-    location.replace(url);
+    // let url = location.href + "?plantime=60";
+    location.replace(https://t-kata921.github.io/NervousBreakdown/?plantime=60);
   })
   let url = new URL(window.location.href);
   let param = url.searchParams;
