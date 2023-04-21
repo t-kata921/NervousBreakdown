@@ -82,7 +82,7 @@ body .container.game-phase {
   width: 80vh;
   height: 100vh;
   grid-template-areas: "btn" "board";
-  grid-template-rows: 20vh 80vh;
+  grid-template-rows: 15vh 80vh;
 }
 body .container.game-phase .buttonsContainer {
   grid-area: btn;
